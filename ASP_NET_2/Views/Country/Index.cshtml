@@ -1,0 +1,50 @@
+﻿@model IEnumerable<ASP_NET_2.Models.Country>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@* <h1>Index</h1> *@
+
+<ul style="list-style: none; padding: 0;">
+    <li><a asp-action="Create">Create New</a></li>
+    <li><a asp-action="Dowloand_ex">Download Excel</a></li>
+    <li><a asp-action="Dowloand_csv">Download CSV</a></li>
+</ul>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.capital)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.capital)
+            </td>
+            <td>
+
+                @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+                @Html.ActionLink("Details", "Details", new { id=item.id }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.id })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
