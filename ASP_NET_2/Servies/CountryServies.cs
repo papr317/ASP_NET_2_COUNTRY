@@ -38,8 +38,6 @@ namespace SEP241_ASPNET.Service
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
         }
 
-        // --- CRUD-операции (Dapper) ---
-
         // достать все
         public IEnumerable<Country> GetCountry()
         {
